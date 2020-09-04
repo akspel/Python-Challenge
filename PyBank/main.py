@@ -6,3 +6,10 @@ with open(csvpath, newline='') as csvfile:
     print(csvreader)
     for row in csvreader:
         print(row)
+def print_budget(budget_data):
+    date = str(budget_data[0])
+    budget = int(budget_data[1])
+
+    total_months = date
+    
+
