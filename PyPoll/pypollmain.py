@@ -1,3 +1,4 @@
+# import csv
 import os
 csvpath = os.path.join('Resources', 'election_data.csv')
 import csv
