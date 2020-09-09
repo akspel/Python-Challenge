@@ -3,12 +3,11 @@ csvpath = os.path.join('Resources', 'election_data.csv')
 import csv
 with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    print(csvreader)
     next(csvreader)
     first_voter = next(csvreader)
     print(first_voter)
-
-    total_votes = 0
+    
+    total_votes = 1
     candidates_unique = []
     candidate_vote_count = []
 
@@ -23,9 +22,8 @@ with open(csvpath, newline='') as csvfile:
             candidates_unique.append(candidate_in)
             candidate_vote_count.append(1)
 
-            print(f'Total votes: {total_votes}')
-            print(f'Each candidate: {candidates_unique}')
-            print(f'Index: {candidates_unique.index(candidate_in)}')
+            print(total_votes)
+            print(f'Each Candidate: {candidates_unique}')
 
     pct = []
     max_votes = candidate_vote_count[0]
@@ -40,9 +38,14 @@ with open(csvpath, newline='') as csvfile:
             max_index = x
     election_winner = candidates_unique[max_index]
 
+
     print(f'Vote count for each candidate: {candidate_vote_count}')
     print(f'Max votes: {max_votes}')
     print(f'Election winner: {election_winner}')
+
+    for x in range(len(candidates_unique)):
+        print(f'{candidates_unique[x]} : {pct[x]}% ({candidate_vote_count[x]}')
+        
 
 
 # The total number of votes cast
