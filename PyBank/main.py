@@ -26,9 +26,9 @@ with open(csvpath, newline='') as csvfile:
         total_difference = total_difference + difference
         difference_count = difference_count + 1        
 # looping to get increases and decreases        
-        if difference > greatest_increase:
+        if difference < greatest_increase:
             greatest_increase = difference
-        if difference < greatest_decrease:
+        if difference > greatest_decrease:
             greatest_decrease = difference
         previous_amount = int(row[1])          
 # calculating total months
