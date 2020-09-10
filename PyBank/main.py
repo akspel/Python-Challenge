@@ -32,12 +32,18 @@ with open(csvpath, newline='') as csvfile:
             greatest_decrease = difference
         previous_amount = int(row[1])          
 # calculating total months
-    print(months)  
+    print(f'Months: {months}') 
 # calculating total amount of Profit/Losses
-    print(amount)
+    print(f'Total Amount: {amount}')
 # calculating average of changes in Profit/Losses
-    print(total_difference/difference_count)
+    print(f'Average Changes: {total_difference/difference_count}')
 # Find the greatest increase in profits (date and amount)
-    print(greatest_increase)
+    print(f'Greatest Increase: {greatest_increase}')
 # Find the greatest decrease in losses
-    print(greatest_decrease)          
+    print(f'Greatest Decrease: {greatest_decrease}')      
+
+# Output new file
+output_file = os.path.join('budget_data.csv')
+with open(output_file, "w") as datafile:
+    writer = csv.writer(datafile)
+    writer.writerow(["Months", "Total Amount", "Average Changes", "Greatest Increase", "Greatest Decrease"])
