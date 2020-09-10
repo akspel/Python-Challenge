@@ -53,7 +53,12 @@ with open(csvpath, newline='') as csvfile:
 # The percentage of votes each candidate won
     for x in range(len(candidates_unique)):
         print(f'{candidates_unique[x]} : {pct[x]}% ({candidates_vote_count[x]})')
-
+# Output new file
+output_file = os.path.join('election_data.csv')
+with open(output_file, "w") as datafile:
+    writer = csv.writer(datafile)
+    writer.writerow(["Total Votes", "Each Candidates", "Votes for each Candidate", "Max Votes" "Election Winner"])
+    
 
 
                 
