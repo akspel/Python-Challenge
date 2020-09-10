@@ -7,4 +7,18 @@ with open(csvpath, newline='') as csvfile:
     next(csvreader)
     first_voter = next(csvreader)
     print(first_voter)
-    
+
+ # define variables
+    total_votes = 1
+    candidates_unique = []
+    candidates_vote_count = []
+
+ # create for loop
+    for row in csvreader:
+        total_votes = total_votes + 1
+
+
+
+
+ # The total numbers of votes cast
+        print(total_votes)             
