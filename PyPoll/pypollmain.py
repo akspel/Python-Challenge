@@ -43,14 +43,16 @@ with open(csvpath, newline='') as csvfile:
         if candidates_vote_count[x] > max_votes:
             max_votes = candidates_vote_count[x]
             max_index = x
-    election_winner = candidates_unique[max_index]        
+    election_winner = candidates_unique[max_index]
+           
 #  The number of votes each candidate won
     print(f'Votes for each Candidate: {candidates_vote_count}')
 # The winner of the election based on the popular vote
     print(f'Max Votes: {max_votes}')
     print(f'Election Winner: {election_winner}')
 # The percentage of votes each candidate won
-    print(f'{candidates_unique[x]} : {pct[x]}% ({candidates_vote_count[x]})')
+    for x in range(len(candidates_unique)):
+        print(f'{candidates_unique[x]} : {pct[x]}% ({candidates_vote_count[x]})')
 
 
 
